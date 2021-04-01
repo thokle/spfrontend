@@ -1,0 +1,38 @@
+<article class="sample-column">
+  <form [formGroup]="fgg" novalidate >
+
+    <igx-select  [(ngModel)]="selected" formControlName="clubid">
+      <igx-select-item *ngFor="let c of clubs" value="{{c.id}}">{{c.name}}</igx-select-item>
+    </igx-select>
+
+
+    <igx-input-group>
+      <label igxLabel for="name">name</label>
+      <input igxInput id="name" name="firstname" type="text" required="required"  formControlName="name"/>
+    </igx-input-group>
+
+    <igx-input-group>
+      <label igxLabel for="type">Type</label>
+      <input igxInput id="type" name="type" type="text" required="required"  formControlName="type" />
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="max">max</label>
+      <input igxInput id="max" name="max" type="number" formControlName="max">
+    </igx-input-group>
+
+    <igx-input-group>
+      <label igxLabel for="price">price</label>
+      <input igxInput id="price" name="price" type="number" required="required"  formControlName="price" />
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="startDate">Start Dato</label>
+      <input igxInput id="startDate" name="startDate" type="datetime-local" required="required"  formControlName="startDate" />
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="endDate">SlutDate</label>
+      <input igxInput id="endDate" name="endDate" type="text" required="required" formControlName="endDate" />
+    </igx-input-group>
+
+    <button igxButton="flat" igxRipple (click)="CreateActivity()">Opret Aktivitet</button>
+  </form>
+</article>

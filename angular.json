@@ -122,7 +122,130 @@
           }
         }
       }
+    },
+    "MemberDashBoard": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/member-dash-board",
+      "sourceRoot": "projects/member-dash-board/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/MemberDashBoard",
+            "index": "projects/member-dash-board/src/index.html",
+            "main": "projects/member-dash-board/src/main.ts",
+            "polyfills": "projects/member-dash-board/src/polyfills.ts",
+            "tsConfig": "projects/member-dash-board/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/member-dash-board/src/favicon.ico",
+              "projects/member-dash-board/src/assets"
+            ],
+            "styles": [
+              "projects/member-dash-board/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/member-dash-board/src/environments/environment.ts",
+                  "with": "projects/member-dash-board/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "MemberDashBoard:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "MemberDashBoard:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "MemberDashBoard:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/member-dash-board/src/test.ts",
+            "polyfills": "projects/member-dash-board/src/polyfills.ts",
+            "tsConfig": "projects/member-dash-board/tsconfig.spec.json",
+            "karmaConfig": "projects/member-dash-board/karma.conf.js",
+            "assets": [
+              "projects/member-dash-board/src/favicon.ico",
+              "projects/member-dash-board/src/assets"
+            ],
+            "styles": [
+              "projects/member-dash-board/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/member-dash-board/tsconfig.app.json",
+              "projects/member-dash-board/tsconfig.spec.json",
+              "projects/member-dash-board/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/member-dash-board/e2e/protractor.conf.js",
+            "devServerTarget": "MemberDashBoard:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "MemberDashBoard:serve:production"
+            }
+          }
+        }
+      }
     }
   },
-  "defaultProject": "spfrontend"
+  "defaultProject": "spfrontend",
+  "cli": {
+    "analytics": false
+  }
 }
