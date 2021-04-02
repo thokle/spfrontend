@@ -1,0 +1,24 @@
+<div>
+<form [formGroup]="fg">
+  <igx-select  [(ngModel)]="selectedCard"  formControlName="clubid" class="igx-row">
+    <igx-select-item *ngFor="let c of cardTypes"  value="{{c.type}}">{{c.type}}</igx-select-item>
+  </igx-select>
+  <igx-input-group>
+    <label igxLabel for="cardnumber">cardnumber</label>
+    <input igxInput id="cardnumber" name="cardnumber" type="number" required="required"  formControlName="cardnumber" />
+  </igx-input-group>
+  <igx-input-group>
+    <label igxLabel for="endMonth">endMonth</label>
+    <input igxInput id="endMonth" name="endMonth" type="number" formControlName="endMonth">
+  </igx-input-group>
+  <igx-input-group>
+    <label igxLabel for="endYear">endYear</label>
+    <input igxInput id="endYear" name="endYear" type="endYear" required="required"  formControlName="endYear" />
+  </igx-input-group>
+  <igx-input-group>
+    <label igxLabel for="cvc">cvc</label>
+    <input igxInput id="cvc" name="cvc" type="number" required="required"  formControlName="cvc" />
+  </igx-input-group>
+  <button igxButton="raised" (click)="addCreaditCard()">tilføj kredit kort</button>
+</form>
+</div>

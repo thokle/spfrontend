@@ -1,0 +1,18 @@
+<article class="sample-column">
+  <form [formGroup]="fg" novalidate >
+
+    <igx-input-group>
+      <label igxLabel for="name">Name></label>
+      <input igxInput id="name" name="name" type="email" required="required" formControlName="name" />
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="type">Type</label>
+      <input igxInput id="type" name="type" type="text" required="required" formControlName="type"/>
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="cvr">Cvr</label>
+      <input igxInput id="cvr" name="cvr" type="text" required="required"  formControlName="cvr"/>
+    </igx-input-group>
+    <button igxButton="flat" igxRipple (click)="create()">Submit</button>
+  </form>
+</article>

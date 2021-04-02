@@ -1,0 +1,14 @@
+<p>activity-dialog works!</p>
+<igx-select [(ngModel)]="selectedValue" (change)="chane()">
+  <igx-select-item *ngFor="let c of creditCards" value="{{c.cardnumber}}"  >{{c.cardnumber}}</igx-select-item>
+</igx-select>
+<igx-input-group>
+  <label igxLabel for="email">Email</label>
+  <input igxInput id="email" [(ngModel)]="data.email"/>
+</igx-input-group>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
+

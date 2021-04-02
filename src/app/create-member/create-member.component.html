@@ -1,0 +1,47 @@
+<div class="igx-display-container">
+  <form [formGroup]="fg" novalidate style="width: 80%; margin:10px">
+
+      <igx-select  [(ngModel)]="selectedItem"  formControlName="clubid">
+        <igx-select-item *ngFor="let c of clubs"  value="{{c.id}}">{{c.name}}{{c.id}}</igx-select-item>
+      </igx-select>
+
+
+    <igx-input-group>
+      <label igxLabel for="firstname">Fornavn</label>
+      <input igxInput id="firstname" name="firstname" type="text" required="required"  formControlName="firstname"/>
+    </igx-input-group>
+
+    <igx-input-group>
+      <label igxLabel for="lastname">Efternavn</label>
+      <input igxInput id="lastname" name="lastname" type="text" required="required"  formControlName="lastname" />
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="middlenavn">Mellem navn</label>
+      <input igxInput id="middlenavn" name="middlename" type="text" formControlName="middlename">
+    </igx-input-group>
+
+      <igx-date-picker [showWeekNumbers]="true" formControlName="birthDate"></igx-date-picker>
+
+    <igx-input-group>
+      <label igxLabel for="mobil">Mobil</label>
+      <input igxInput id="mobil" name="mobil" type="tel" required="required"  formControlName="mobil" />
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="username">Brugernavn</label>
+      <input igxInput id="username" name="username" type="text" required="required" formControlName="username" />
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="email">Email</label>
+      <input igxInput id="email" name="email" type="email" required="required" formControlName="email" />
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="password">Password</label>
+      <input igxInput id="password" name="password" type="text" required="required" formControlName="password"/>
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="reenterpassword">re-enterpassword</label>
+      <input igxInput id="reenterpassword" name="reenterpassword" type="text" required="required"  formControlName="reenterpassword"/>
+    </igx-input-group>
+    <button igxButton="flat" igxRipple (click)="create($event)">Submit</button>
+  </form>
+</div>

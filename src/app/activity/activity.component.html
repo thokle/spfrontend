@@ -1,0 +1,10 @@
+
+<div class="igx-display-container">
+<table style="margin: 0px; width: 80%" >
+  <tr><th>ID</th><th>Name</th><th>Type</th><th>Start Date</th><th>End Date</th><th>Pris</th></tr>
+  <tr *ngFor="let a of activities"><td>{{a.id}}</td><td>{{a.name}}</td><td>{{a.type}}</td><td>{{a.startDate}}</td><td>{{a.endDate}}</td><td>{{a.price}}</td><td>{{a.participates}}</td><td>{{a.max}}</td><igx-checkbox (click)="openDialog(a.id)" ></igx-checkbox></tr>
+</table>
+</div>
+
+
+

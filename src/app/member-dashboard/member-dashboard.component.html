@@ -1,0 +1,16 @@
+<div class="container">
+  <igx-navbar>
+    <button [igxToggleAction]="menu" [igxToggleOutlet]="outlet" [overlaySettings]="overlaySettings" [igxDropDownItemNavigation]="menu"
+            igxButton="icon">
+      <igx-icon fontSet="material">more_vert</igx-icon>
+    </button>
+    <igx-drop-down #menu (onSelection)="onSelection($event)">
+      <igx-drop-down-item *ngFor="let item of items" [value]="item.name">
+
+       <igx-bottom-nav [routerLink]="[{ outlets:{ user: [item.routerlink]} }]" >{{item.name}}</igx-bottom-nav>
+      </igx-drop-down-item>
+    </igx-drop-down>
+  </igx-navbar>
+<router-outlet name="user"></router-outlet>
+</div>
+

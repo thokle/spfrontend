@@ -1,0 +1,27 @@
+<div class="igx-display-container"  *ngIf="numberofShops < 0">
+  <form [formGroup]="form" novalidate style="width: 80%; margin:10px">
+
+
+    <igx-input-group>
+      <label igxLabel for="name">Shopname</label>
+      <input igxInput id="name" name="name" type="text" formControlName="name">
+    </igx-input-group>
+
+    <igx-date-picker [showWeekNumbers]="true" formControlName="startdate"></igx-date-picker>
+
+    <button igxButton="flat" igxRipple (click)="createShop()">Submit</button>
+  </form>
+</div>
+<div class="igx-display-container" *ngIf="numberofShops > 0">
+
+<button name="shop Iten"  cdkAriaLive="polite" (click)="addItemToShop()">Add ShopItem</button>
+</div>
+
+<select [(ngModel)]="selectedShop"  (ngModelChange)="loadShop(selectedShop)">
+  <option *ngFor="let s of shops" value="{{s.name}}"  >{{s.name}}</option>
+</select>
+
+
+<table>
+  <tr *ngFor="let i of shopItem"><td>{{i.name}}</td><td>{{i.model}}</td></tr>
+</table>

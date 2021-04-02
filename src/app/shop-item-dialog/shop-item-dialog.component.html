@@ -1,0 +1,53 @@
+<div>
+
+
+ -->
+</div>
+<div class="igx-display-container">
+  <form [formGroup]="formGroup" novalidate style="width: 80%; margin:10px">
+
+    <igx-select [(ngModel)]="selectedShop" placeholder="Shop" formControlName="shopid">
+      <igx-select-item  *ngFor="let s of shops" value="{{s.id}}">{{s.name}} {{s.id}}</igx-select-item>
+
+    </igx-select>
+
+
+    <igx-input-group>
+      <label igxLabel for="typeItem">Type</label>
+      <input igxInput id="typeItem" name="typeItem" type="text" required="required"  formControlName="typeItem"/>
+    </igx-input-group>
+
+    <igx-input-group>
+      <label igxLabel for="model">model</label>
+      <input igxInput id="model" name="model" type="text" required="required"  formControlName="model" />
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="name">name</label>
+      <input igxInput id="name" name="middlename" type="text" formControlName="name">
+    </igx-input-group>
+
+
+    <igx-input-group>
+      <label igxLabel for="price">Price</label>
+      <input igxInput id="price" name="price" type="number" required="required"  formControlName="price" />
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="size">Size</label>
+      <input igxInput id="size" name="size" type="text" required="required" formControlName="size" />
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="condition">Condition</label>
+      <input igxInput id="condition" name="condition" type="email" required="required" formControlName="condition" />
+    </igx-input-group>
+    <igx-input-group>
+      <label igxLabel for="itemInStock">Antal</label>
+      <input igxInput id="itemInStock" name="itemInStock" type="email" required="required" formControlName="itemInStock" />
+    </igx-input-group>
+
+    <igx-input-group>
+      <label igxLabel for="pictureUrl">Antal</label>
+      <input igxInput id="pictureUrl" name="pictureUrl" type="file" required="required" formControlName="pictureUrl" />
+    </igx-input-group>
+    <button igxButton="flat" igxRipple (click)="create()">Tilføj</button>
+  </form>
+</div>

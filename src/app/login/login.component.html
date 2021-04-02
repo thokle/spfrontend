@@ -1,0 +1,21 @@
+<div id="login" style="Width: 30%; margin-left: 35%; margin-right: 30%">
+<form [formGroup]="fg" novalidate >
+  <igx-input-group>
+    <label igxLabel for="username">User Name</label>
+    <input igxInput id="username" name="username" type="text" required="required"  formControlName="username"/>
+  </igx-input-group>
+
+  <igx-input-group>
+    <label igxLabel for="password">Password</label>
+    <input igxInput id="password" name="password" type="password"  required="required"  formControlName="password" />
+  </igx-input-group>
+
+   <igx-radio-group>
+     <igx-radio [(ngModel)]="selected" value="owner" formControlName="owner">Owner</igx-radio>
+     <igx-radio [(ngModel)]="selected" value="member" formControlName="member">Member</igx-radio>
+     <igx-radio [(ngModel)]="selected" value="coach" formControlName="coach">Coach</igx-radio>
+   </igx-radio-group>
+
+  <button igxButton="raised" igxRipple (click)="login()">Submit</button>
+</form>
+</div>
